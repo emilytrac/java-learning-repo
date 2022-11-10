@@ -11,7 +11,7 @@ public class BookPresentationImpl implements BookPresentation {
 	
 	private BookService bookService;
 
-	public void setBookPresentationImpl(BookService bookService) {
+	public void setBookService(BookService bookService) {
 		this.bookService = bookService;
 	}
 

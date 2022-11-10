@@ -24,7 +24,7 @@ public class BookConfiguration {
 	@Bean(name="presentation")
 	public BookPresentation getBookPresentation() {
 		BookPresentationImpl presentation = new BookPresentationImpl();
-		presentation.setBookPresentationImpl(getService());
+		presentation.setBookService(getService());
 		return presentation;
 	}
 }

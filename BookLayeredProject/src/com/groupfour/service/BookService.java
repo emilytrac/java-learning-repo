@@ -11,5 +11,7 @@ public interface BookService {
 	Book searchBookById(int id);
 	
 	boolean addNewBook(Book book);
+	
+	boolean deleteBook(int id);
 
 }

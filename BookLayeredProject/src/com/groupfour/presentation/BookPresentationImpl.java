@@ -20,7 +20,8 @@ public class BookPresentationImpl implements BookPresentation {
 		System.out.println("1. List all books");
 		System.out.println("2. Search by ID");
 		System.out.println("3. Add new book");
-		System.out.println("4. Exit");
+		System.out.println("4. Delete book");
+		System.out.println("5. Exit");
 	}
 
 	@Override
@@ -46,11 +47,11 @@ public class BookPresentationImpl implements BookPresentation {
 		case 3:
 			Book newBook = new Book();
 			System.out.println("Enter book ID : ");
-			newBook.setBookId(scanner.nextInt());
+			newBook.setBookId(Integer.parseInt(scanner.nextLine()));
 			System.out.println("Enter book name : ");
-			newBook.setBookName(scanner.next());
+			newBook.setBookName(scanner.nextLine());
 			System.out.println("Enter book author : ");
-			newBook.setAuthorName(scanner.next());
+			newBook.setAuthorName(scanner.nextLine());
 			System.out.println("Enter number of copies : ");
 			newBook.setNumCopies(scanner.nextInt());
 			
@@ -60,6 +61,14 @@ public class BookPresentationImpl implements BookPresentation {
 				System.out.println("Book already exists");
 			break;
 		case 4:
+			System.out.println("Enter Book ID : ");
+			int bId=scanner.nextInt();
+			if(bookService.deleteBook(bId))
+				System.out.println("Book with id "+bId+" deleted");
+			else
+				System.out.println("Book with id "+bId+" does not exist");
+			break;
+		case 5:
 			System.out.println("Thanks for using the Book system");
 			// exits the system
 			System.exit(0);

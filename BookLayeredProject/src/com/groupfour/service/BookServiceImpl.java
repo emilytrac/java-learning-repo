@@ -26,11 +26,17 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public boolean addNewBook(Book book) {
-		Book bookToAdd = bookDao.searchBook(book.getBookId());
-		if (bookToAdd != null) {
-			return false;
+		if(bookDao.addBook(book) > 0) {
+			return true;
+		} 
+		return false;
+	}
+
+	@Override
+	public boolean deleteBook(int id) {
+		if(bookDao.deleteBook(id) > 0) {
+			return true;
 		}
-		bookDao.addBook(book);
-		return true;
+		return false;
 	}
 }

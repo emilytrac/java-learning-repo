@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Bank Account Transfer System</h1>
+<hr>
+<h3 th:text="'Welcome '+${session.user.name}+'!'"></h3>
+<hr>
+<h2 th:text="${message}"></h2>
+<br><br>
+<a href="./">Go Back to Menu Page</a>
+</body>
+</html>

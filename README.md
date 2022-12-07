@@ -1,3 +1,3 @@
 # java-learning-repo
 
-Work completed whilst learning object orientated programming in Java.
+Work completed whilst learning how to build applications using Java and the Spring Boot framework.
